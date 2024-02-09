@@ -68,7 +68,7 @@ class HTML extends AbstractWriter implements WriterInterface
      *
      * @throws \PhpOffice\PhpWord\Exception\Exception
      */
-    public function save($filename = null)
+    public function save($filename = null): void
     {
         $this->writeFile($this->openFile($filename), $this->getContent());
     }

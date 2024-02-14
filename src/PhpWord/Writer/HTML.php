@@ -125,6 +125,7 @@ class HTML extends AbstractWriter implements WriterInterface
         $content .= "<html$langtext>" . PHP_EOL;
         $content .= $this->getWriterPart('Head')->write();
         $content .= $this->getWriterPart('Body')->write();
+        $content = preg_replace('/(<\/li>)(?=\s*<\/td>)/', '$1' . PHP_EOL, $content);
         $lines = explode(PHP_EOL, $content);
         $content .= '</html>' . PHP_EOL;
         $newcontent = '';
